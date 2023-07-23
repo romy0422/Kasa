@@ -10,6 +10,19 @@ body {
     font-family: "Montserrat", Arial, sans-serif;
 }
 
+main {
+    flex: 1 0 auto;
+    margin: auto 10%;
+    width: 80%;
+  }
+  
+  @media screen and (max-width: 1490px) {
+    main {
+      margin: auto 5%;
+      width: 90%;
+    }
+  }
+
 /* Contenu */
 .App {
     display: flex;

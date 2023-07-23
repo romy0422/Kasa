@@ -1,27 +1,27 @@
-.tuile {
+.card {
   border-radius: 10px;
   height: 100%;
   min-height: 340px;
   position: relative;
 }
 
-.tuile:hover {
+.card:hover {
   background: linear-gradient(180deg, #ff6060 85%, rgba(0, 0, 0, 0.6509803922) 100%);
   cursor: pointer;
 }
 
-.tuile-image {
+.card-image {
   border-radius: 10px;
   height: 100%;
   object-fit: cover;
   width: 100%;
 }
 
-.tuile:hover > .tuile-image {
+.card:hover > .tuile-image {
   opacity: 0.3;
 }
 
-.tuile-sombre {
+.card-sombre {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5019607843) 100%);
   border-radius: 10px;
   height: 100%;
@@ -31,7 +31,7 @@
   width: 100%;
 }
 
-.tuile-titre {
+.card-titre {
   bottom: 20px;
   color: #ffffff;
   font-size: 18px;
@@ -41,7 +41,7 @@
 }
 
 @media screen and (max-width: 1490px) {
-  .tuile {
+  .card {
     min-height: 255px;
   }
 }

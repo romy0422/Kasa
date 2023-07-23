@@ -6,7 +6,7 @@ import Etoile from "../assets/images/Pages/Logements/Etoile.png";
 import EtoileVide from "../assets/images/Pages/Logements/EtoileVide.png";
 
 
-function Fiche() {
+function Logements() {
     /* Récupère la bonne fiche */
     const id = useParams();
     const ficheLogement = ListeLogements.find(logement => logement.id === id.id);
@@ -61,4 +61,4 @@ function Fiche() {
     )
 }
 
-export default Fiche;
+export default Logements;

@@ -48,8 +48,8 @@
 header {
   align-items: center;
   display: inline-flex;
-  margin: 40px 10%;
-  width: 80%;
+  margin: 40px 5px;
+  width: 101%;
 }
 
 header > img {
@@ -76,7 +76,7 @@ nav {
   border-bottom: 1px solid #ff6060;
 }
 
-@media screen and (max-width: 1490px) {
+@media only screen and (max-width: 768px) {
   header {
     margin: 40px 2.5%;
     width: 95%;
@@ -86,6 +86,11 @@ nav {
   }
   .lien-site {
     margin: auto 5px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  header {
+    flex-direction: column;
   }
 }
 footer {
@@ -101,12 +106,10 @@ footer {
   height: 150px;
   padding: 25px 0px;
 }
-
 #footer-container > img {
   display: block;
   margin: auto;
 }
-
 #footer-container > p {
   color: #ffffff;
   text-align: center;
@@ -157,7 +160,10 @@ footer {
 html,
 body {
   margin: 0;
+  margin-left: 50px;
+  margin-right: 50px;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* Polices */

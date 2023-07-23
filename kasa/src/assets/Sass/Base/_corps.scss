@@ -2,7 +2,11 @@
 html,
 body {
     margin: 0;
+    margin-left: 50px;
+    margin-right: 50px;
     padding: 0;
+    box-sizing: border-box;
+   
 }
 
 /* Polices */
@@ -16,4 +20,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
 }
+

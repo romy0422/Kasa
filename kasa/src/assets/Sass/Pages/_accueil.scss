@@ -5,6 +5,7 @@
     grid-template-columns: 1fr 1fr 1fr; 
     gap: 50px 60px; 
     padding: 55px 50px;
+   
 }
 
 @media screen  and (max-width: 1490px) {
@@ -18,5 +19,6 @@
         gap: 20px 0;
         grid-template-columns: 1fr;
         padding: 0;
+        
     }
 }

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import ListeLogements from "../Data/logements.json";
 import Banniere from "../Composants/Banniere/Banniere";
 import banniereAccueil from "../assets/images/Pages/Accueil/Banniere.png";
-import Tuile from "../Composants/Tuile/Tuile";
+import Tuile from "../Composants/Tuile/Card";
 import "../css/style.css";
 
 function Accueil() {

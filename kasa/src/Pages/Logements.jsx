@@ -2,7 +2,8 @@ import React from "react";
 import "../css/style.css";
 import { useParams, Navigate } from 'react-router-dom';
 import ListeLogements from "../Data/logements.json";
-
+import Etoile from "../assets/images/Pages/Logements/Etoile.png";
+import EtoileVide from "../assets/images/Pages/Logements/EtoileVide.png";
 
 
 function Fiche() {
@@ -19,9 +20,9 @@ function Fiche() {
             etoileComplete = false;
         }
         if(etoileComplete === true) {
-            noteLogement.push(<img key={index} className="etoile"  alt={`${ficheLogement?.rating}/5`}/>)
+            noteLogement.push(<img key={index} className="etoile" src={Etoile} alt={`${ficheLogement?.rating}/5`}/>)
         } else {
-            noteLogement.push(<img key={index} className="etoile"  alt={`${ficheLogement?.rating}/5`}/>)
+            noteLogement.push(<img key={index} className="etoile" src={EtoileVide} alt={`${ficheLogement?.rating}/5`}/>)
         }
     }
 
@@ -31,7 +32,7 @@ function Fiche() {
             {
                 ficheLogement ? (
                     <div className="Fiche">
-                   
+                  
                         <div className="logements-propietaire">
                             <div className="information-logements">
                                 <span className="titre-logement">{ficheLogement?.title}</span>

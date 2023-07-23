@@ -1,64 +1,51 @@
-import React from "react";
-import "../css/style.css";
-import { useParams, Navigate } from 'react-router-dom';
-import ListeLogements from "../Data/logements.json";
-import Etoile from "../assets/images/Pages/Logements/Etoile.png";
-import EtoileVide from "../assets/images/Pages/Logements/EtoileVide.png";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+export default function FicheLogement() {
+	const params = useParams();
+	const navigate = useNavigate();
 
-
-function Logements() {
-    /* Récupère la bonne fiche */
-    const id = useParams();
-    const ficheLogement = ListeLogements.find(logement => logement.id === id.id);
-
-
-    /* Notes */
-    let noteLogement = [];
-    let etoileComplete = true;
-    for (let index = 0; index < 5; index++) {
-        if(index === parseInt(ficheLogement?.rating)) {
-            etoileComplete = false;
-        }
-        if(etoileComplete === true) {
-            noteLogement.push(<img key={index} className="etoile" src={Etoile} alt={`${ficheLogement?.rating}/5`}/>)
-        } else {
-            noteLogement.push(<img key={index} className="etoile" src={EtoileVide} alt={`${ficheLogement?.rating}/5`}/>)
-        }
-    }
-
-
-    return(
-        <>
-            {
-                ficheLogement ? (
-                    <div className="Fiche">
-                  
-                        <div className="logements-propietaire">
-                            <div className="information-logements">
-                                <span className="titre-logement">{ficheLogement?.title}</span>
-                                <span className="endroit-logement">{ficheLogement?.location}</span>
-                                <div className="tags">
-                                 
-                                </div>
-                            </div>
-                            <div className="proprietaire-note">
-                                <div className="information-propietaire">
-                                    <span className="nom-proprietaire">{ficheLogement?.host.name}</span>
-                                    <img className="photo-propietaire" src={ficheLogement?.host.picture} alt="Propriétaire"/>
-                                </div>
-                                <div className="note">
-                                    {noteLogement}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="description-equipements">
-                         
-                        </div>
-                    </div>
-                ) : <Navigate replace to="/404"/>
-            }
-        </>
-    )
+	const [pickedAppart, setPickedAppart] = useState();
+	useEffect(() => {
+		const getData = async () => {
+			const res = await axios.get("logements.json"); 
+			const picked = res.data.find(({ id }) => id === params.id);
+			res.data.map(() => setPickedAppart(picked));
+			if (picked === undefined) {
+				navigate("/404", { state: { message: "Can't get data" } }); //renvoi vers la page 404 en cas d'URL de logement invalide
+			}
+		};
+		getData();
+		// eslint-disable-next-line
+	}, []); // array vide du useEffect pour ne lancer qu'une seule fois
+	
+	return (
+		pickedAppart && (
+			<div key={params.id} className="fiche-container">
+				
+				<section className="hostInfo-container">
+					<div className="title-tags-container">
+						<div className="title-container redFont">
+							<h1>{pickedAppart.title}</h1>
+							<h3>{pickedAppart.location}</h3>
+						</div>
+						<div className="tags-container">
+							
+						</div>
+					</div>
+					<div className="rate-host-container">
+						<div className="host-container redFont">
+							
+						</div>
+						<div className="rate-container">
+							
+						</div>
+					</div>
+				</section>
+				<div className="collapse-fiche-container">
+				
+				</div>
+			</div>
+		)
+	);
 }
-
-export default Logements;

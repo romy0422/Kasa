@@ -90,7 +90,8 @@ nav {
 }
 @media only screen and (max-width: 360px) {
   header {
-    flex-direction: column;
+    height: 37px;
+    align-items: flex-start;
   }
 }
 footer {
@@ -166,6 +167,16 @@ body {
   box-sizing: border-box;
 }
 
+@media only screen and (max-width: 360px) {
+  html,
+  body {
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
 /* Polices */
 * {
   font-family: "Montserrat", Arial, sans-serif;

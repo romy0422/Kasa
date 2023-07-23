@@ -1,3 +1,4 @@
+@import '../Utils/responsives.scss';
 /* Base */
 html,
 body {
@@ -8,6 +9,18 @@ body {
     box-sizing: border-box;
    
 }
+@media #{$medium-up} {
+    html,
+    body {
+        margin: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 0;
+        box-sizing: border-box;
+       
+    }
+    
+  }
 
 /* Polices */
 * {

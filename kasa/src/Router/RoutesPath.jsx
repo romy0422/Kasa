@@ -13,7 +13,7 @@ function RoutesPath() {
                 <Routes>
                     <Route element={<Navigate replace to="/accueil" />} path="/" />
                     <Route path="/Accueil" element={<Accueil />}/>
-                    <Route path="/Logements/:id" element={<Logements />}/>
+                    <Route path="/logement/:id" element={<Logements />}/>
                 </Routes>
                 <Footer />
         </HashRouter>

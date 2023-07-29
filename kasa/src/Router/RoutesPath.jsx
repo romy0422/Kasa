@@ -1,9 +1,10 @@
-import React from "react";
-import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
-import Accueil from "../Pages/Accueil";
-import Logements from '../Pages/Logements';
-import Header from "../Mise_en_page/Header/Header";
-import Footer from "../Mise_en_page/Footer/Footer";
+import React from "react"
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom"
+import Accueil from "../Pages/Accueil"
+import APropos from "../Pages/About"
+import Logements from '../Pages/Logements'
+import Header from "../Composants/Header/Header"
+import Footer from "../Composants/Footer/Footer"
 
 
 function RoutesPath() {
@@ -12,7 +13,8 @@ function RoutesPath() {
                 <Header />
                 <Routes>
                     <Route element={<Navigate replace to="/accueil" />} path="/" />
-                    <Route path="/Accueil" element={<Accueil />}/>
+                    <Route path="/accueil" element={<Accueil />}/>
+                    <Route path="/about" element={<APropos />}/>
                     <Route path="/logement/:id" element={<Logements />}/>
                 </Routes>
                 <Footer />

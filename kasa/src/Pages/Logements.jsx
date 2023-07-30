@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Notes from "../Composants/Notes/Notes";
+import Carrousel from "../Composants/Caroussel/Caroussel";
+import Collapse from "../Composants/Collapse/Collapse";
 export default function Logements() {
 	const params = useParams();
 	const navigate = useNavigate();
@@ -19,13 +21,21 @@ export default function Logements() {
 		getData();
 		// eslint-disable-next-line
 	}, []); // array vide du useEffect pour ne lancer qu'une seule fois
-
+	const slidePics = pickedAppart && pickedAppart.pictures;
+	const equipments = pickedAppart && pickedAppart.equipments;
+	const equip =
+		pickedAppart &&
+		equipments.map((item, index) => (
+			<li key={index} className="equipList">
+				{item}
+			</li>
+		));
 	return(
    
        
 		pickedAppart && (
 			<div key={params.id} className="Fiche">
-				
+				<Carrousel slides={slidePics} />
 				<section className="hostInfo-container">
 					<div className="title-tags-container">
 						<div className="information-logements">
@@ -48,7 +58,11 @@ export default function Logements() {
                             </div>
 				</section>
 				<div className="collapse-fiche-container">
-				
+					<Collapse
+						aboutTitle="Description"
+						aboutText={pickedAppart.description}
+					/>
+					<Collapse aboutTitle="Équipements" aboutText={equip} />
 				</div>
 			</div>
 		)  );

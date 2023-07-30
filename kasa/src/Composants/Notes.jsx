@@ -1,6 +1,6 @@
-import Etoile from "../../assets/images/Pages/Logements/Etoile.png";
-import EtoileVide from "../../assets/images/Pages/Logements/EtoileVide.png";
-import "../../css/style.css";
+import Etoile from "../assets/images/Pages/Logements/Etoile.png";
+import EtoileVide from "../assets/images/Pages/Logements/EtoileVide.png";
+import "../css/style.css";
 export default function Notes({ score }) {
 	const stars = [1, 2, 3, 4, 5];
 	return (

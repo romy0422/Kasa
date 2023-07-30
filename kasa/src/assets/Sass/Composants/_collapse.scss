@@ -4,9 +4,7 @@
 .collapse {
 	width: 100%;
 	margin: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
 	@media screen and (min-width: $medium-up) {
 		margin: 31px auto 0;
 	}
@@ -94,6 +92,13 @@
 		flex-direction: row;
 		gap: 6%;
 	}
+}
+
+.collapse-fiche-containers {
+	display: flex;
+	width: 100%;
+
+	
 }
 
 .equipList {

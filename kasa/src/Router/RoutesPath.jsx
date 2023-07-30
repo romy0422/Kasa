@@ -3,8 +3,8 @@ import { HashRouter, Routes, Route, Navigate } from "react-router-dom"
 import Accueil from "../Pages/Accueil"
 import APropos from "../Pages/About"
 import Logements from '../Pages/Logements'
-import Header from "../Composants/Header/Header"
-import Footer from "../Composants/Footer/Footer"
+import Header from "../Composants/Header"
+import Footer from "../Composants/Footer"
 
 
 function RoutesPath() {

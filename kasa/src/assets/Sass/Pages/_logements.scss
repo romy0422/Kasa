@@ -53,8 +53,8 @@
 }
 
 .etoile {
-    width: 15px;
-    height: 15px;
+    height: 30px;
+    width: 30px;
 }
 
 .description-equipements {
@@ -69,7 +69,16 @@
 .description-equipements > .dropdown {
     width: 50%;
 }
+.hostInfo-container {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
 
+	@media screen and (min-width: $medium-up) {
+		flex-direction: row;
+		align-items: flex-end;
+	}
+}
 @media screen and (max-width: 1490px) {
     .logements-propietaire {
         display: block;

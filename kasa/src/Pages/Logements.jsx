@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Notes from "../Composants/Notes/Notes";
-import Carrousel from "../Composants/Caroussel/Caroussel";
-import Collapse from "../Composants/Collapse/Collapse";
+import Notes from "../Composants/Notes";
+import Carrousel from "../Composants/Caroussel";
+import Collapse from "../Composants/Collapse";
+import Tag from "../Composants/Tags";
 export default function Logements() {
 	const params = useParams();
 	const navigate = useNavigate();
@@ -22,10 +23,9 @@ export default function Logements() {
 		// eslint-disable-next-line
 	}, []); // array vide du useEffect pour ne lancer qu'une seule fois
 	const slidePics = pickedAppart && pickedAppart.pictures;
+	const tags = pickedAppart && pickedAppart.tags;
 	const equipments = pickedAppart && pickedAppart.equipments;
-	const equip =
-		pickedAppart &&
-		equipments.map((item, index) => (
+	const equip =pickedAppart && equipments.map((item, index) => (
 			<li key={index} className="equipList">
 				{item}
 			</li>
@@ -37,16 +37,24 @@ export default function Logements() {
 			<div key={params.id} className="Fiche">
 				<Carrousel slides={slidePics} />
 				<section className="hostInfo-container">
+					
 					<div className="title-tags-container">
+						
 						<div className="information-logements">
+							
                             <span className="titre-logement">{pickedAppart.title}</span>
                             <span className="endroit-logement">{pickedAppart.location}</span>
-						</div>
-						<div className="tags-container">
 							
 						</div>
+						
+						<div className="tags-container">
+							{tags.map((tag) => (
+								<Tag key={tag} tag={tag} />
+							))}
+						</div>
+						
 					</div>
-                    <div className="proprietaire-note">
+					<div className="proprietaire-note">
                                 <div className="information-propietaire">
                                     <span className="nom-proprietaire">{pickedAppart.host.name}</span>
                                     <img className="photo-propietaire" src={pickedAppart.host.picture} alt="Propriétaire"/>
@@ -57,7 +65,7 @@ export default function Logements() {
                                 </div>
                             </div>
 				</section>
-				<div className="collapse-fiche-container">
+				<div className="collapse-fiche-containers">
 					<Collapse
 						aboutTitle="Description"
 						aboutText={pickedAppart.description}

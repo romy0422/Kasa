@@ -340,6 +340,7 @@ footer {
 .collapse {
   width: 100%;
   margin: 20px 0;
+  align-items: center;
 }
 @media screen and (min-width: only screen and (max-width: 360px)) {
   .collapse {
@@ -452,6 +453,12 @@ footer {
 .collapse-fiche-containers {
   display: flex;
   width: 100%;
+}
+@media screen and (min-width: only screen and (max-width: 360px)) {
+  .collapse-fiche-containers {
+    flex-direction: row;
+    gap: 6%;
+  }
 }
 
 .equipList {

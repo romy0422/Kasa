@@ -5,6 +5,7 @@ import APropos from "../Pages/About"
 import Logements from '../Pages/Logements'
 import Header from "../Composants/Header"
 import Footer from "../Composants/Footer"
+import Erreur404 from "../Pages/404";
 
 
 function RoutesPath() {
@@ -16,6 +17,7 @@ function RoutesPath() {
                     <Route path="/accueil" element={<Accueil />}/>
                     <Route path="/about" element={<APropos />}/>
                     <Route path="/logement/:id" element={<Logements />}/>
+                    <Route path="*" element={<Erreur404 />}/>
                 </Routes>
                 <Footer />
         </HashRouter>

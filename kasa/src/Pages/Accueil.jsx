@@ -4,7 +4,6 @@ import banniereAccueil from "../assets/images/Pages/Accueil/Banniere.png";
 import Card from "../Composants/Card";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import "../css/style.css";
 export default function Accueil() {
 	const [data, setData] = useState([]);
 

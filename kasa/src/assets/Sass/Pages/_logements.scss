@@ -30,6 +30,7 @@
     display: flex;
     justify-content: flex-end;
     margin-bottom: 25px;
+    margin-right: 20px;
 }
 
 .nom-proprietaire {
@@ -74,16 +75,19 @@
 	width: 100%;
 	justify-content: space-between;
 
-	@media screen and (min-width: $medium-up) {
+	@media screen and (min-width: 1000px) {
 		flex-direction: row;
 		align-items: flex-end;
 	}
 }
-@media screen and (max-width: 1490px) {
+@media screen and (max-width: 1000px) {
     .logements-propietaire {
         display: block;
     }
-
+    .hostInfo-container {
+        display:flex;
+        flex-direction: column;
+    }
     .titre-logement {
         display: block;
         font-size: 24px;
@@ -100,10 +104,20 @@
         flex-wrap: wrap;
         gap: 10px 0;
     }
+.tags-container{
+    display:flex;
+    width:100%;
+
+}
 
     .tags > .tag {
         margin-left: 0px;
         min-width: 50px;
+    }   
+    .note{
+        position:relative;
+        left:0;
+
     }
 
     .proprietaire-note {
@@ -116,7 +130,7 @@
 
     .information-propietaire {
         margin-bottom: unset;
-        width: 100%;
+        width: 85%;
     }
 
     .photo-propietaire {
@@ -140,4 +154,5 @@
     .dropdown {
         margin-bottom: 20px;
     }
+    
 }

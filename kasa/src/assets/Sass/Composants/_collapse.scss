@@ -3,11 +3,12 @@
 
 .collapse {
 	width: 100%;
-	margin: 20px 0;
+	margin: 20px 10px;
  
     align-items: center;
-	@media screen and (min-width: $medium-up) {
-		margin: 31px auto 0;
+	@media screen and (min-width: $medium) {
+		margin: 31px auto ;
+
 	}
 
 	&__visible {
@@ -20,28 +21,39 @@
 		height: 30px;
 		padding: 7px 15px;
 		border-radius: 5px;
-		width: 60%;
+		width: calc(100% - 40px);
 
-		@media screen and (min-width: $medium-up) {
+		@media screen and (min-width: 1000px) {
 			height: 47px;
+		}
+		@media screen and (max-width: 1000px) {
+			height: 20px;
+			width:calc(100% - 60px);
 		}
 
 		h2 {
 			@include font(13px, 500);
 
-			@media screen and (min-width: $medium-up) {
+			@media screen and (min-width: 1000px) {
 				@include font(24px, 500);
 			}
 		}
 	}
 
 	&__toggle {
+		position:relative;
+		height:calc(fit-content + 60px);
 		opacity: 0;
 		color: $primary-color;
 		background: $secondary-color;
 		border-radius: 3px;
 		transition: opacity 0.4s ease-in-out, height 0.4s 0.4s ease-in-out;
-        width: 61.5%;
+		width:calc(100% - 10px);
+		@media screen and (max-width:1000px){
+			width:calc(100% - 30px);
+			height:calc(fit-content + 20px);
+
+		}
 		p {
         
 			margin: 0;
@@ -49,7 +61,7 @@
 			pointer-events: none;
 			@include font(12px, 400);
 
-			@media screen and (min-width: $medium-up) {
+			@media screen and (min-width: 1000px) {
 				@include font(24px, 400);
 			}
 		}
@@ -62,13 +74,9 @@
 }
 
 .chevron {
-	width: 9px;
+	width: 20px;
 	transform: rotate(0deg);
 	transition: 0.4s 0.4s ease-in-out;
-
-	@media screen and (min-width: $medium-up) {
-		width: 15px;
-	}
 }
 
 .rotated {
@@ -80,28 +88,29 @@
 	width: 100%;
 	@include flex-column;
 
-	@media screen and (min-width: $medium-up) {
-		width: 87.5%;
+	@media screen and (min-width: $medium) {
+		width: 100%;
 	}
 }
 
 .collapse-fiche-container {
 	@include flex-column;
 	width: 100%;
-
-	@media screen and (min-width: $medium-up) {
+	justify-content: space-between;
+	@media screen and (min-width: 1000px) {
 		flex-direction: row;
-		gap: 6%;
+		gap:6px;
 	}
 }
 
 .collapse-fiche-containers {
 	display: flex;
 	width: 100%;
-
-	@media screen and (min-width: $medium-up) {
-		flex-direction: row;
+	gap:120px;
+	@media screen and (max-width: $medium) {
+		flex-direction: column;
 		gap: 6%;
+		
 	}
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import RoutesPath from "./Router/RoutesPath";
-import "./css/style.css";
+import "./assets/Sass/main.scss";
 
 function App() {
     return (

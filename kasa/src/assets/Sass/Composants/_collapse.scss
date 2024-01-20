@@ -3,11 +3,10 @@
 
 .collapse {
 	width: 100%;
-	margin: 20px 10px;
- 
+	margin: 20px 0;
     align-items: center;
 	@media screen and (min-width: $medium) {
-		margin: 31px auto ;
+		margin: 31px 0 ;
 
 	}
 
@@ -19,38 +18,34 @@
 		justify-content: space-between;
 		align-items: center;
 		height: 30px;
-		padding: 7px 15px;
+		padding: 7px 0;
 		border-radius: 5px;
-		width: calc(100% - 40px);
+		width: 100%;
 
-		@media screen and (min-width: 1000px) {
-			height: 47px;
-		}
 		@media screen and (max-width: 1000px) {
-			height: 20px;
-			width:calc(100% - 60px);
+			width:100%;
 		}
 
 		h2 {
 			@include font(13px, 500);
-
+			padding:0 20px;
 			@media screen and (min-width: 1000px) {
-				@include font(24px, 500);
+				@include font(20px, 500);
 			}
 		}
 	}
 
 	&__toggle {
 		position:relative;
-		height:calc(fit-content + 60px);
+		height:calc(fit-content + 100px);
 		opacity: 0;
 		color: $primary-color;
 		background: $secondary-color;
-		border-radius: 3px;
+		border-radius: 5px;
 		transition: opacity 0.4s ease-in-out, height 0.4s 0.4s ease-in-out;
-		width:calc(100% - 10px);
+		width:100%;
 		@media screen and (max-width:1000px){
-			width:calc(100% - 30px);
+			width:100%;
 			height:calc(fit-content + 20px);
 
 		}
@@ -59,7 +54,8 @@
 			margin: 0;
 			padding: 22px 15px;
 			pointer-events: none;
-			@include font(12px, 400);
+			height:fit-content;
+			@include font(15px, 400);
 
 			@media screen and (min-width: 1000px) {
 				@include font(24px, 400);
@@ -74,6 +70,7 @@
 }
 
 .chevron {
+	padding:0 20px;
 	width: 20px;
 	transform: rotate(0deg);
 	transition: 0.4s 0.4s ease-in-out;
@@ -86,10 +83,12 @@
 
 .about-style {
 	width: 100%;
+	margin: 20px auto;
 	@include flex-column;
 
 	@media screen and (min-width: $medium) {
-		width: 100%;
+		width:70%;
+		height:fit-content;
 	}
 }
 

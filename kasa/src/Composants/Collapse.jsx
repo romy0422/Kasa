@@ -12,8 +12,8 @@ export default function Collapse(props) {
 	const refHeight = useRef(); //récupère et conserve la valeur de hauteur du collapse déplié
 
 	useEffect(() => {
-		setHeightEl(`${refHeight.current.scrollHeight}px`); //useEffect s'éxécute au montage du composant, dans ce cas, il définit la hauteur du collapse déplié lors de sa première ouverture et la conserve dans refHeight
-	}, []);
+		setHeightEl(`${refHeight.current.scrollHeight + 20}px`); //useEffect s'éxécute au montage du composant, dans ce cas, il définit la hauteur du collapse déplié lors de sa première ouverture et la conserve dans refHeight
+	}, [heightEl, toggle]);
 
 	return (
 		// affiche le collapse replié par défaut et l'ouvre au clic puis le referme au clic en faisant disparaitre le texte et le style

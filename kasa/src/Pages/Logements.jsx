@@ -12,16 +12,23 @@ export default function Logements() {
   
 	useEffect(() => {
 		const getData = async () => {
-			const res = await axios.get("logements.json"); 
-			const picked = res.data.find(({ id }) => id === params.id);
-			res.data.map(() => setPickedAppart(picked));
-			if (picked === undefined) {
-				navigate("/404", { state: { message: "Oups! La page que vous demandez n'existe pas." } }); //renvoi vers la page 404 en cas d'URL de logement invalide
+			try {
+				const res = await axios.get("/logements.json"); 
+				const picked = res.data.find(({ id }) => id === params.id);
+	
+				if (picked) {
+					setPickedAppart(picked);
+				} else {
+					throw new Error("Logement non trouvé");
+				}
+			} catch (error) {
+				console.error("Erreur lors de la récupération des données :", error);
+				navigate("/404", { state: { message: "Oups! La page que vous demandez n'existe pas." } });
 			}
 		};
 		getData();
-		// eslint-disable-next-line
-	}, []); // array vide du useEffect pour ne lancer qu'une seule fois
+	}, [params.id, navigate]); // Dépendances vides pour exécuter une fois
+	
 	const slidePics = pickedAppart && pickedAppart.pictures;
 	const tags = pickedAppart && pickedAppart.tags;
 	const equipments = pickedAppart && pickedAppart.equipments;

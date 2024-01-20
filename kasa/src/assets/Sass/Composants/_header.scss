@@ -4,10 +4,10 @@ header {
     align-items: center;
     display: inline-flex;
     margin: 40px 5px;
-    width: 101%;
+    width: 100%;
   }
   
-  header > img {
+  header img {
     height: 68px;
   }
   
@@ -22,8 +22,9 @@ header {
     margin: auto 25px;
     text-decoration: none;
   }
+
   .lien-site:hover {
-    color: #000000;
+    color: #ff6060;
   }
   
   .lien-menu.active {
@@ -36,8 +37,8 @@ header {
       width: 95%;
     }
     
-    header > img {
-      height: 47px;
+    header img {
+      height: 37px;
     }
   
     .lien-site {

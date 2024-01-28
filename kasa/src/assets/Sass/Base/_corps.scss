@@ -3,11 +3,10 @@
 /* Base */
 html,
 body {
-    margin: 0;
-    margin-left: 50px;
-    margin-right: 50px;
-    padding: 0;
+    margin: auto;
+    overflow-x:hidden;
     box-sizing: border-box;
+    
    
 }
 @media #{$medium-up} {
@@ -34,6 +33,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
+    padding: 0 40px;
 }
 

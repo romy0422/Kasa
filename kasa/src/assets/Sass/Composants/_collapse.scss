@@ -91,7 +91,9 @@
 		height:fit-content;
 	}
 }
-
+.about{
+	padding:0 40px;
+}
 .collapse-fiche-container {
 	@include flex-column;
 	width: 100%;

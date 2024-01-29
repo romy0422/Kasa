@@ -13,7 +13,7 @@ export default function Logements() {
 	useEffect(() => {
 		const getData = async () => {
 			try {
-				const res = await axios.get("logements.json"); 
+				const res = await axios.get("/logements.json"); 
 				const picked = res.data.find(({ id }) => id === params.id);
 	
 				if (picked) {
